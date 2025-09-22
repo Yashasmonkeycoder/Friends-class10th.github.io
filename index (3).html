@@ -1,0 +1,569 @@
+<!doctype html>
+<html >
+  <head >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="animation.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      table {
+  font-family: 'Varela Round';
+  border-collapse: collapse;
+  width: 85%;
+  color:whitesmoke;
+  position: absolute;
+  z-index:100;
+  left:7.5%;
+}
+.t1{top: 5rem}
+.t2{top:77rem}
+.bubbles{
+  z-index:10;
+}
+td, th {
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: #1a1e23;
+  opacity: 85%;
+}
+.img{
+  position: relative;
+  top:134rem;
+  z-index:99;
+  border-radius: 5px;
+  border:2px solid white;
+}
+.medal{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 90%;
+  z-index: 150;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#modal{
+  width: 90%;
+  height: 30%;
+  background-color: white;
+   z-index: 150;
+  border-radius: 15px;
+  position: fixed;
+  top:30%;
+  left: 5%;
+  display: none;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-name: none;
+  font-family: 'Varela Round';
+}
+.cancel{
+  position: absolute;
+  left: 85%;
+  top: 3%;
+  border: solid 2px black;
+  color: black;
+  font-size: 1.5em;
+  border-radius: 40px;
+  outline: none;
+}
+#calltxt{
+  font-size: 1.4em;
+  position: absolute;
+  left: 20%;
+  top: 15%;
+}
+.call{
+  width: 7rem;
+  height: 3rem;
+  background-color: green;
+  border: 0;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px lime;
+  font-size: 1.5em;
+  color: white;
+  position: absolute;
+  left: 32.5%;
+  top: 55%;
+  outline: none;
+}
+@keyframes pop{
+  0%{transform:scale(0.5)}
+  100%{transform:scale(1)}
+}
+.foot{
+  width: 98%;
+  height: 3rem;
+  background-color: transparent;
+  border: solid white 3px;
+  color: white;
+  font-size: 1.6em;
+  border-radius: 18px 18px 0 0;
+  border-bottom: 0;
+  position: relative;
+  left: 0;
+  top: 140rem;
+  z-index: 150;
+  padding-top: 1rem;
+  font-family: bradley hand, cursive;
+}
+.head{
+  position: fixed;
+  top: 0;
+  width: 98%;
+  height: 2.2rem;
+  background-color: #1a1e23;
+  border: solid white 3px;
+  color: white;
+  font-size: 1.4em;
+  border-radius:0 0 18px 18px;
+  border-top: 0;
+  font-family: 'Varela Round';
+  padding-top: 0.5rem;
+  z-index: 9999;
+}
+.btns{
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+  position: fixed;
+  z-index: 999;
+  top: 94%;
+  left: 89%;
+  outline: none;
+}
+ .lader{
+  align-items: center;
+  background-color: #1D1F20;
+  display: flex;
+  justify-content: center;
+  z-index: 10000;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+#lader{
+  display: block;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-name: none;
+}
+@keyframes fade{
+  0%{opacity:100%}
+  100%{opacity:0%}
+}
+.loader  {
+  animation: rotate 1s infinite;  
+  height: 50px;
+  width: 50px;
+}
+
+.loader:before,
+.loader:after {   
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;  
+  width: 20px;
+}
+.loader:before {
+  animation: ball1 1s infinite;  
+  background-color: #cb2025;
+  box-shadow: 30px 0 0 #f8b334;
+  margin-bottom: 10px;
+}
+.loader:after {
+  animation: ball2 1s infinite; 
+  background-color: #00a096;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+@keyframes rotate {
+  0% { 
+    -webkit-transform: rotate(0deg) scale(0.8); 
+    -moz-transform: rotate(0deg) scale(0.8);
+  }
+  50% { 
+    -webkit-transform: rotate(360deg) scale(1.2); 
+    -moz-transform: rotate(360deg) scale(1.2);
+  }
+  100% { 
+    -webkit-transform: rotate(720deg) scale(0.8); 
+    -moz-transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #f8b334;
+  }
+  50% {
+    box-shadow: 0 0 0 #f8b334;
+    margin-bottom: 0;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #97bf0d;
+    margin-top: 0;
+  }
+}
+.inf{
+  width: 88%;
+  position: relative;
+  left: 5%;
+  top: 152.5rem;
+  z-index: 999;
+  height: 2.5rem;
+  background-color: white;
+  color: black;
+  border-radius: 18px;
+  font-size: 1.15em;
+  font-family: 'Varela Round';
+  padding-top: 0.8rem;
+  padding-left: 10px;
+}
+    </style>
+  </head>
+  <body >
+    <div id="lader"><div class="lader"><div class="loader"></div></div></div>
+<div class="bubbles">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
+<div class="head"><center>2022 Class 10th Students</center></div>
+<div id="main"><table class="t1">
+  <tr >
+    <th >Name</th>
+    <th >Contact</th>
+    <th ></th>
+  </tr>
+  <tr>
+    <td>Adhithya.V</td>
+    <td>6362414520</td>
+    <td onclick="call('6362414520')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>
+    <tr>
+    <td>Ameeth Bhagya Rajan</td>
+    <td>8431412540</td>
+    <td onclick="call('8431412540')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Anish Machado</td>
+    <td>9663026912</td>
+    <td onclick="call('9663026912')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Chinmai.D.P</td>
+    <td>6361489966</td>
+    <td onclick="call('6361489966')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Dhanush.D.R</td>
+    <td>7204864522</td>
+    <td onclick="call('7204864522')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Hemanth</td>
+    <td>7676248724</td>
+    <td onclick="call('7676248724')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Harshith.S</td>
+    <td>9632280970</td>
+    <td onclick="call('9632280970')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Hongirana.D</td>
+    <td>7899976801</td>
+    <td onclick="call('7899976801')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Jeremiah.K.J</td>
+    <td>9901880037</td>
+    <td onclick="call('9901880037')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Kushal.D.R</td>
+    <td>9380400928</td>
+    <td onclick="call('9380400928')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Koushik.D.R</td>
+    <td>9380400928</td>
+    <td onclick="call('9380400928')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>   <tr>
+    <td>Likith.S</td>
+    <td>7829386297</td>
+    <td onclick="call('7829386297')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr> <tr>
+    <td>Lohith.R</td>
+    <td>8310502378</td>
+    <td onclick="call('8310502378')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Manoj Nayaka T.R</td>
+    <td>7204208945</td>
+    <td onclick="call('7204208945')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>M.D Ameen</td>
+    <td>7483302940</td>
+    <td onclick="call('7483302940')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>M.D Rahil</td>
+    <td>8123084099</td>
+    <td onclick="call('8123084099')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>M.D Shadab</td>
+    <td>9164780427</td>
+    <td onclick="call('9164780427')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Mithun.K.S</td>
+    <td>7676609144</td>
+    <td onclick="call('7676609144')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Raj Sahani</td>
+    <td>7676695885</td>
+    <td onclick="call('7676695885')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Rohith.C</td>
+    <td>9741951139</td>
+    <td onclick="call('9741951139')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Sameer Ali</td>
+    <td>8296905709</td>
+    <td onclick="call('8296905709')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Sampath.D.R</td>
+    <td>9741277224</td>
+    <td onclick="call('9741277224')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Shamanth.M</td>
+    <td>9036424671</td>
+    <td onclick="call('9036424671')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Sonal.R</td>
+    <td>7204209959</td>
+    <td onclick="call('7204209959')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Suhas.D.S</td>
+    <td>8123282641</td>
+    <td onclick="call('8123282641')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Tejas.T.D</td>
+    <td>6363834428</td>
+    <td onclick="call('6363834428')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Ullas.T.M</td>
+    <td>9901347954</td>
+    <td onclick="call('9901347954')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Yashas.R</td>
+    <td>7619298312</td>
+    <td onclick="call('7619298312')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Ziya ur Rehman</td>
+    <td>7795459634</td>
+    <td onclick="call('7795459634')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr> 
+</table>
+<table class="t2">
+    <tr >
+    <th >Name</th>
+    <th >Contact</th>
+    <th ></th>
+  </tr>
+    <tr>
+    <td>Aishwarya.S.Y</td>
+    <td>9686336241</td>
+    <td onclick="call('9686336241')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Ankitha</td>
+    <td>9481254697</td>
+    <td onclick="call('9481254697')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Brunda.C Gowda</td>
+    <td>6364308783</td>
+    <td onclick="call('6364308783')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Chaitra</td>
+    <td>9482493067</td>
+    <td onclick="call('9482493067')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Deepika</td>
+    <td>9945056081</td>
+    <td onclick="call('9945056081')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Deepu.M.R</td>
+    <td>8762294716</td>
+    <td onclick="call('8762294716')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Dolan Biswas</td>
+    <td>7411270633</td>
+    <td onclick="call('7411270633')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Esther.J Paul</td>
+    <td>9036700831</td>
+    <td onclick="call('9036700831')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Fiza Anjum</td>
+    <td>9449128027</td>
+    <td onclick="call('9449128027')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Gagana.T.V</td>
+    <td>9686137283</td>
+    <td onclick="call('9686137283')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Harshitha.Y.M</td>
+    <td>8971919981</td>
+    <td onclick="call('8971919981')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Kubra</td>
+    <td>6361515386</td>
+    <td onclick="call('6361515386')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Kusuma</td>
+    <td>7676621128</td>
+    <td onclick="call('7676621128')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Lakshmi.T.P</td>
+    <td>9591554732</td>
+    <td onclick="call('9591554732')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Manya</td>
+    <td>8971231238</td>
+    <td onclick="call('8971231238')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Nithya.M.S</td>
+    <td>8660764458</td>
+    <td onclick="call('8660764458')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Pragna</td>
+    <td>9741993024</td>
+    <td onclick="call('9741993024')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Rakshita.K.N</td>
+    <td>8277450540</td>
+    <td onclick="call('8277450540')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Sanvi.S Gowri</td>
+    <td>8197601480</td>
+    <td onclick="call('8197601480')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Saouda Naz</td>
+    <td>9449803787</td>
+    <td onclick="call('9449803787')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Sneha.G.V</td>
+    <td>7483481255</td>
+    <td onclick="call('7483481255')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Shreya.H.S</td>
+    <td>7676086696</td>
+    <td onclick="call('7676086696')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Thanushree</td>
+    <td>9741157613</td>
+    <td onclick="call('9741157613')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>  <tr>
+    <td>Vinutha.K.R</td>
+    <td>9686336241</td>
+    <td onclick="call('9686336241')" style="color:limegreen"><i class="bi bi-telephone"></i></td>
+  </tr>
+</table>
+</div>
+<div class="inf" onclick="window.location.href='https://memories.class10th.repl.co/'">    Click to see photo gallery<i class="bi bi-link" style="position: absolute;left:auto;right:5%;font-size:1.5em"></i></div>
+<br>
+<div id="modal"><button class="cancel" onclick="this.parentElement.style.display='none'"><i class="bi bi-x"></i></button>
+<h4 id="calltxt">Call 6969696969?</h4>
+<button class="call" onclick="calldone()">Call <i class="bi bi-telephone"></i></button>
+</div>
+<center >
+  <img class="img" src="friends.jpg" width="330" height="200" onclick="window.location.href='https://memories.class10th.repl.co/'">
+</center>
+<div class="foot"><center>Best Batch <i class="fa fa-hand-peace-o"></i></center>
+</div><button class="btns" onclick="set_idVal('main')"><i class="bi bi-search"></i></button>
+  </body>
+<script >
+var number = "";
+  function call(num){
+    number = num;
+    document.getElementById("calltxt").innerText=`Call ${num}?`;
+    document.getElementById("modal").style.animationName="pop";
+    document.getElementById("modal").style.display="block";
+  }
+  function calldone(){
+    window.open(`tel:${number}`);
+  }
+  function exec(){
+    var kk = document.getElementById("lader").style;
+    kk.animationName="fade";
+    setTimeout(kk.display="none",1000);
+  }
+  window.onload = function(){
+    setTimeout(exec(),1000);
+  }
+</script><script src="https://cdn.jsdelivr.net/gh/Yashasmonkeycoder/find-text_plugin@V1.0.4/find-text.min.js"></script>
